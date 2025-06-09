@@ -23,7 +23,7 @@ app.get("/todos", (req, res) => {
 app.post("/todos", (req, res) => {
   const newTodo = req.body;
   todos.push(newTodo);
-  res.json({
+  res.status(201).json({
     message: "Todo Created Successfully",
   });
 });
@@ -38,10 +38,14 @@ app.put("/todos/:id", (req, res) => {
       id: todoIds,
       ...newTodo,
     };
+    return res.json({
+      message: "Updated success fully",
+    });
+  } else {
+    return res.status(400).json({
+      error: "Id is not exist",
+    });
   }
-  res.json({
-    message: "Updated success fully",
-  });
 });
 
 // DELETE
