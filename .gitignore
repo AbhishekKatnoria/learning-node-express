@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.*
+
+# npm package-lock
+package-lock.json
+
+# Dependency directory
+jspm_packages/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Debug
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# npm global modules
+.npm/
+
+# Yarn / pnpm lock files (if using yarn/pnpm)
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional eslint cache
+.eslintcache
+
+# VSCode settings folder
+.vscode/
