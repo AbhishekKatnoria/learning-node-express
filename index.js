@@ -34,15 +34,27 @@ app.put("/todos/:id", (req, res) => {
   const todoIds = Number(req.params.id);
   const todoIndex = todos.findIndex((todo) => todo.id === todoIds);
   if (todoIndex !== -1) {
-    todos[todoIndex]= {
-      id:todoIds,
+    todos[todoIndex] = {
+      id: todoIds,
       ...newTodo,
-    }
+    };
   }
   res.json({
     message: "Updated success fully",
   });
 });
 
+// DELETE
+app.delete("/todos/:id", (req, res) => {
+  const todoId = Number(req.params.id);
+  const UpdateTodo = todos.findIndex((todo) => todo.id === todoId);
+  if (UpdateTodo !== -1) {
+    todos.splice(UpdateTodo, 1);
+  }
+  res.json({
+    message: "Delete successfully",
+  });
+});
+
 const PORT = 5111;
-app.listen(PORT, () => [console.log("HI, I am running on port " + PORT)]);
+app.listen(PORT, () => [console.log("Hi, I am running on port " + PORT)]);
